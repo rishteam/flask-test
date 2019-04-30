@@ -109,7 +109,7 @@ def login():
 def logout():
     logout_user()
     flash('Log Out See You.')
-    return redirect(url_for('loginx'))
+    return redirect(url_for('login'))
   
   
 @app.route('/userinfo')  

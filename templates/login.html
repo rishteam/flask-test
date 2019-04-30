@@ -13,16 +13,34 @@ Login
 
 <div class="test">
 	<form method="POST" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizonal">	
+		{{ form.csrf_token }}
 		<div class="form-group">
-			<label for="ID">ID</label>
-			<input type="ID" class="form-control" id="ID" placeholder="ID">
+			<label for="username">Username</label>
+			{{ form.username(class="form-control", id="username", type="text", placeholder="Username") }}
 		</div>
 		<div class="form-group">
-			<label for="Password">Password</label>
-			<input type="Password" class="form-control" id="Password" placeholder="Password">
+			<label for="password">Password</label>
+			{{ form.password(class="form-control", id="password", placeholder="password") }}
+		</div>
+		
+		<div class="row checkbox_pos">		
+			<div class="custom-control form-control-lg custom-checkbox">
+				
+					  <!-- <input type="checkbox"> -->
+				{{ form.remember_me(class_="custom-control-input")}}
+					<!-- <span class="control-indicator"></span> -->
+					<!-- Remember me -->
+				<label class="custom-control-label" type="checkbox" for="remember_me">
+					Remember me
+				</label>
+
+			<!-- <div class="custom-control custom-checkbox">	 -->
+			<!-- </div> -->
+			</div>
 		</div>
 		<div class="row dis">
-			<button type="submit" class="btn btn-primary">Submit</button>
+
+			<button class="btn btn-primary">{{ form.submit(type="submit", id="submit", value="login", class="fortest")}}</button>
 			<button type="register" class="btn btn-primary btn-dis" onclick="location.href='{{ url_for('register') }}'">Register</button>
 			<small id="forget-password" class="form-text text-muted pos"><a href="/">忘記密碼?</a></small>
 		</div>

@@ -43,7 +43,7 @@ class FormLogin(Form):
 
     username = StringField('UserName', validators=[
         validators.DataRequired(),
-        validators.Length(10, 30)
+        validators.Length(2, 30)
     ])
 
     password = PasswordField('PassWord', validators=[

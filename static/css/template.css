@@ -19,6 +19,20 @@ body{
 	font-size: 1.5em;
 }
 
+.fortest{
+
+	background-color: transparent;
+	color: white;
+	border: none;
+	overflow: hidden;
+	outline: none;
+}
+
+.checkbox_pos{
+
+	padding-left: 0.37em;
+}
+
 .title{
 
 	font-size: 2em;
@@ -36,7 +50,7 @@ body{
 
 .dis{
 
-	margin-top:2em;
+	margin-top:1em;
 }
 
 .topdis{
