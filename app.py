@@ -64,14 +64,24 @@ def index():
 def register():
 	form =FormRegister()
 
-	print(form.validate_on_submit())
 	if form.validate_on_submit():
+		# catch time
 		date_time = datetime.datetime.now()
-		account = Account(uid=0, username=form.username.data, nickname=form.nickname.data, password=generate_password_hash(form.password.data), email=form.email.data, permLevel=False, signUpTime=date_time, lastLoginTime=date_time, icon=False)
-		db.session.add(account) 
-		db.session.commit()
 
-		return 'Success Thank You'
+		# user & email collision
+		username = Account.query.filter(Account.username == form.username.data).first()
+		email = Account.query.filter(Account.email == form.email.data).first()
+
+		if username or email:
+			return 'Username or Email collision'
+		elif form.password.data != form.confirm.data:
+			return 'two password is different'
+		else:	
+			account = Account(uid=0, username=form.username.data, nickname=form.nickname.data, password=generate_password_hash(form.password.data), email=form.email.data, permLevel=False, signUpTime=date_time, lastLoginTime=date_time, icon=False)
+			db.session.add(account) 
+			db.session.commit()
+			flash('Success Thank You')
+
 	return render_template('register.html', form=form)
 
 @app.route('/test') 
