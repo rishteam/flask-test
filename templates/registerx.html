@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Reister Page{% endblock title %}
+{% block main %}
+<div class="form-container">
+    <h1>Register Your Account</h1>
+    <h2>Welcome To My Blog</h2>
+
+
+    <form method="post">
+    	{{ form.csrf_token }}
+    	{{ form.username.label }}{{ form.username(class="form-control" ,style='color:red',placeholder='请输入用户名') }}{{ form.username.errors }}
+    	{{ form.nickname.label }}{{ form.nickname(class="form-control", style='color:red') }}{{ form.nickname.errors }}
+    	{{ form.email.label }}{{ form.email(class="form-control") }}{{ form.email.errors }}
+    	{{ form.password.label }}{{ form.password(class="form-control" ,style='color:red') }}{{ form.password.errors }}
+    	{{ form.confirm.label }}{{ form.confirm(class="form-control" ,style='color:red') }}{{ form.confirm.errors }}
+    	{{ form.submit() }}
+    </form>
+
+<!-- 	<div class="col-md-4">
+		{{ wtf.quick_form(form) }}
+	</div> -->
+</div>
+
+
+
+{% endblock%}

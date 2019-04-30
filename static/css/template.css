@@ -1,0 +1,45 @@
+html, body{
+
+/*	width: 100%;
+	height: 100%;*/
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+body{
+
+	background-color: #00ff00;
+}
+
+.navbar-nav li{
+
+	padding-left: 1em;
+	font-size: 1.5em;
+}
+
+.title{
+
+	font-size: 2em;
+}
+
+.text{
+
+	font-size: 1.4em;
+}
+
+.bardis{
+
+	margin: -0.5em;
+}
+
+.dis{
+
+	margin-top:2em;
+}
+
+.topdis{
+
+	margin-top:5em;
+}

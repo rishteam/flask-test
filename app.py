@@ -23,6 +23,37 @@ login.login_view = 'login'
 def load_user(user_id):
     return Account.query.get(int(user_id))
 
+@app.route('/question_list', methods=['GET', 'POST'])
+def question_list():
+	return render_template('question_list.html')
+
+@app.route('/question', methods=['GET', 'POST'])
+def question():
+	return render_template('question.html')
+
+@app.route('/submit/', methods=['GET','POST'])
+@login_required
+def submit():
+	global submit_id
+	if request.method == 'GET':
+		return render_template('submit.html')
+	else:
+		Problem = request.form.get("problem")
+		Code = request.form.get("code")
+		state = Judger(Code, submit_id)
+		submit_id += 1
+
+		if state == 'AC':
+			return 'Accepted'
+		elif state == 'WA':
+			return 'Wrong Answer'
+		elif state == 'CE':
+			return 'Compile Error'
+		elif state == "RE":
+			return 'Runtime Error'
+		else:
+			pass
+
 
 @app.route('/')  
 @login_required  
@@ -32,6 +63,8 @@ def index():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
 	form =FormRegister()
+
+	print(form.validate_on_submit())
 	if form.validate_on_submit():
 		date_time = datetime.datetime.now()
 		account = Account(uid=0, username=form.username.data, nickname=form.nickname.data, password=generate_password_hash(form.password.data), email=form.email.data, permLevel=False, signUpTime=date_time, lastLoginTime=date_time, icon=False)
@@ -42,12 +75,11 @@ def register():
 	return render_template('register.html', form=form)
 
 @app.route('/test') 
-@login_required 
 def test():
 	flash('flash-1')
 	flash('flash-2')
 	flash('flash-3')
-	return render_template('base.html')  
+	return render_template('index.html')  
   
   
 @app.route('/login', methods=['GET', 'POST'])
@@ -77,7 +109,7 @@ def login():
 def logout():
     logout_user()
     flash('Log Out See You.')
-    return redirect(url_for('login'))
+    return redirect(url_for('loginx'))
   
   
 @app.route('/userinfo')  

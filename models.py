@@ -24,6 +24,7 @@ class Account(UserMixin, db.Model):
 	lastLoginTime = db.Column(db.DateTime, nullable=False) # 最後登入時間
 	icon = db.Column(db.Boolean, nullable=False) # 保留給頭像用
 
+
 	def check_password(self, password):
 		return check_password_hash(self.password, password)
 

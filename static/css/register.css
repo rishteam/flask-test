@@ -1,0 +1,139 @@
+.form-container{
+	width: 300px;
+	margin: 0 auto;
+}
+
+.page-title{
+	text-align: center;
+	font-size: 1.2em;
+	color: #000000;
+}
+
+.page-text{
+
+	font-size: 0.8em;
+}
+
+%fixedbox {
+
+	box-sizing: border-box;
+	display: block;
+	font-size: 4em;
+	padding: 5em;
+	width: 6em;
+	height: 3em;
+
+	position: fixed; 
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.test{
+
+	position: fixed;
+	box-sizing: border-box;
+	display: block;
+	font-size: 2.5em;
+	padding: 0.2em;
+	width: 20em;
+	/*height: 15em;*/
+	top: 50%;
+	left: 50%;
+/*	font-weight: bold;*/
+	/*text-align: center;*/
+	background: #fff;
+	color: #000;
+	mix-blend-mode: normal;
+	z-index: 1000;
+	background-color: rgba(255, 255, 230, 0.5);
+	transform: translate3d(-50%, -50%, 0);
+}
+.pos{
+
+	padding : -100px;
+}
+
+
+.content{
+
+    @extend %fixedbox;
+  
+    font-weight: bold;
+    text-align: center;
+    z-index: 1000;
+
+    background: #fff;
+    color: #000;
+    mix-blend-mode: lighten;
+}
+
+section {
+
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	isolation: isolate;
+
+	position: relative;
+
+	height: 100vh;
+	padding: 1em;
+}
+
+.wrapper {
+
+	clip: rect(auto auto auto auto);
+
+	position: absolute; 
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	&:before {
+		content: " ";
+	    
+	    @extend %fixedbox;
+	    padding: 2em 3.5em;
+	    
+	    mix-blend-mode: darken;
+
+  }
+}
+
+.one {
+
+	background-image: url(https://i.imgur.com/j4KYCHp.jpg);
+
+	.wrapper:before {
+
+		background: red;
+	}
+}
+
+.two {
+	background-image: url(https://i.imgur.com/e2HHYUE.jpg);
+
+		.wrapper:before {
+		background: #faaa54;
+		mix-blend-mode: difference;
+	}
+}
+
+.three {
+	background-image: url(https://i.imgur.com/sN8xQzU.jpg);
+
+		.wrapper:before {
+		background: #6c320a;
+		mix-blend-mode: screen;
+	}
+}
+
+.four {
+	background-image: url(https://i.imgur.com/EN7Srwp.jpg);
+
+	.wrapper:before {
+		background: #e4135d;
+	}
+}

@@ -1,14 +1,87 @@
-{% extends "base.html" %}  
-{% import "bootstrap/wtf.html" as wtf %}  
-  
-{% block title %}Login Page{% endblock %}  
-  
-{% block page_content %}  
-<div class="page-header">  
- <h1>Login</h1>  
- <h2>Welcome To My Blog</h2>  
-</div>  
-<div class="col-md-4">  
-   {{ wtf.quick_form(form) }}  
-</div>  
+{% extends 'base.html' %}
+
+{% block Css %}
+<link rel="stylesheet" type="text/css" href="/static/css/login.css">
+{% endblock %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block main %}
+	<!-- Optional content you want to persist between sections -->
+
+<div class="test">
+	<form method="POST" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizonal">	
+		<div class="form-group">
+			<label for="ID">ID</label>
+			<input type="ID" class="form-control" id="ID" placeholder="ID">
+		</div>
+		<div class="form-group">
+			<label for="Password">Password</label>
+			<input type="Password" class="form-control" id="Password" placeholder="Password">
+		</div>
+		<div class="row dis">
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="register" class="btn btn-primary btn-dis" onclick="location.href='{{ url_for('register') }}'">Register</button>
+			<small id="forget-password" class="form-text text-muted pos"><a href="/">忘記密碼?</a></small>
+		</div>
+	</form>
+</div>
+
+
+<section class="one">
+  <div class="wrapper"></div>
+</section>
+<section class="two">
+  <div class="wrapper"></div>
+</section>
+
+<section class="three">
+  <div class="wrapper"></div>
+</section>
+
+<section class="four">
+  <div class="wrapper"></div>
+</section>
+
+
+
+
+<!-- 
+	<form class="dis">
+		<div class="form-container">	
+		  <div class="form-group">
+		    <label for="ID">ID</label>
+		    <input type="ID" class="form-control" id="ID" placeholder="ID">
+		  </div>
+		  <div class="form-group">
+		    <label for="Password">Password</label>
+		    <input type="Password" class="form-control" id="Password" placeholder="Password">
+		  </div>
+		  <div class="form-group form-check">
+		    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+		    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+		  </div>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+
+	</form> -->
+
+<!-- <h3 class="page-title">Login</h3>
+	<form action="" method="POST">
+		<div class="form-container">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Username" name=Username>
+			</div>
+
+			<div class="form-group">
+				<input type="password" class="form-control" placeholder="Password" name=Password>
+			</div>
+
+			<div class="form-group">
+				<button class="btn btn-primary btn-block">sign-in</button>
+			</div>
+		</div>
+	</form> -->
 {% endblock %}

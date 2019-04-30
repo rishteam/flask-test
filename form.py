@@ -9,7 +9,7 @@ class FormRegister(Form):
     """
     username = StringField('UserName', validators=[
         validators.DataRequired(),
-        validators.Length(10, 30)
+        validators.Length(2, 30)
     ])
 
     nickname = StringField('Nickname', validators=[
@@ -24,10 +24,10 @@ class FormRegister(Form):
     ])
     password = PasswordField('PassWord', validators=[
         validators.DataRequired(),
-        validators.Length(5, 10),
-        validators.EqualTo('password2', message='PASSWORD NEED MATCH')
+        validators.Length(2, 10),
+        validators.EqualTo('confirm', message='PASSWORD NEED MATCH')
     ])
-    password2 = PasswordField('Confirm PassWord', validators=[
+    confirm = PasswordField('Confirm PassWord', validators=[
         validators.DataRequired()
     ])
     submit = SubmitField('Register New Account')
