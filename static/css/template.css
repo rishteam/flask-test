@@ -13,6 +13,12 @@ body{
 	background-color: #00ff00;
 }
 
+.scrollable{
+
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
 .navbar-nav li{
 
 	padding-left: 1em;
@@ -22,10 +28,15 @@ body{
 .fortest{
 
 	background-color: transparent;
+	background-repeat:no-repeat;
 	color: white;
 	border: none;
 	overflow: hidden;
 	outline: none;
+	/*padding: 0;*/
+	/*width: 5em;*/
+	/*height: 4em;*/
+
 }
 
 .checkbox_pos{

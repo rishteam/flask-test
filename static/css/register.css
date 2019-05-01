@@ -29,25 +29,32 @@
 	transform: translate(-50%,-50%);
 }
 
+.card{
+
+	background-color: rgba(255, 255, 230, 0.4);
+	/*opacity: 0.4;*/
+}
+
 .test{
 
-	position: fixed;
+	position: relative;
 	box-sizing: border-box;
 	display: block;
 	font-size: 2.5em;
 	padding: 0.2em;
 	width: 20em;
-	/*height: 15em;*/
+	height: 18em;
 	top: 50%;
 	left: 50%;
-/*	font-weight: bold;*/
+	/*font-weight: bold;*/
 	/*text-align: center;*/
 	background: #fff;
 	color: #000;
 	mix-blend-mode: normal;
 	z-index: 1000;
 	background-color: rgba(255, 255, 230, 0.5);
-	transform: translate3d(-50%, -50%, 0);
+	transform: translate3d(-50%, -10%, 0);
+	/*overflow-y: auto;*/
 }
 .pos{
 

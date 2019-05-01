@@ -68,12 +68,15 @@ def register():
 	form =FormRegister()
 
 	if form.validate_on_submit():
+		print("in")
 		# catch time
 		date_time = datetime.datetime.now()
 
 		# user & email collision
 		username = Account.query.filter(Account.username == form.username.data).first()
 		email = Account.query.filter(Account.email == form.email.data).first()
+
+		print("{} | {}".format(form.password.data, form.confirm.data))
 
 		if username or email:
 			return 'Username or Email collision'
@@ -84,7 +87,8 @@ def register():
 			db.session.add(account)
 			db.session.commit()
 			flash('Success Thank You')
-			return redirect(url_for('index'))
+			return redirect(url_for('login'))
+
 
 	return render_template('register.html', form=form)
 
@@ -98,7 +102,9 @@ def login():
 	form = FormLogin()
 	if form.validate_on_submit():
 		#  當使用者按下login之後，先檢核帳號是否存在系統內。
+		print("validate")
 		user = Account.query.filter_by(username=form.username.data).first()
+		print("{}: {}".format(login, user))
 		if user:
 			#  當使用者存在資料庫內再核對密碼是否正確。
 			if user.check_password(form.password.data):
@@ -110,6 +116,7 @@ def login():
 				flash('Wrong Email or Password')
 		else:
 			#  如果資料庫無此帳號，就顯示錯誤訊息。
+			print("wrong email")
 			flash('Wrong Email or Password')
 	return render_template('login.html', form=form)
 
