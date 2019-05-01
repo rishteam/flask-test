@@ -25,7 +25,7 @@ class FormRegister(Form):
     password = PasswordField('PassWord', validators=[
         validators.DataRequired(),
         validators.Length(2, 10),
-        validators.EqualTo('confirm', message='PASSWORD NEED MATCH')
+        # validators.EqualTo('confirm', message='PASSWORD NEED MATCH')
     ])
     confirm = PasswordField('Confirm PassWord', validators=[
         validators.DataRequired()

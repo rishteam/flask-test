@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
+{% import "bootstrap/wtf.html" as wtf %}
 <head>
 	<title>{% block title %}{% endblock %}</title>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for messages in messages %}
+				<h3>{{ messages }}</h3>
+				<script type="text/javascript">alert(1)</script>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
 </head>
 
 {% block Css %}{% endblock %}
