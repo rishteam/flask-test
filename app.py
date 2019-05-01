@@ -28,6 +28,7 @@ def question_list():
 	return render_template('question_list.html')
 
 @app.route('/question', methods=['GET', 'POST'])
+	
 def question():
 	return render_template('question.html')
 
@@ -55,10 +56,9 @@ def submit():
 			pass
 
 
-@app.route('/')  
-@login_required  
+@app.route('/')    
 def index():
-    return 'Hello Welcome My HomePage'
+	return render_template('index.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -81,20 +81,16 @@ def register():
 			return 'two password is different'
 		else:	
 			account = Account(uid=0, username=form.username.data, nickname=form.nickname.data, password=generate_password_hash(form.password.data), email=form.email.data, permLevel=False, signUpTime=date_time, lastLoginTime=date_time, icon=False)
-			db.session.add(account) 
+			db.session.add(account)  
 			db.session.commit()
 			flash('Success Thank You')
-			# return redirect(url_for('login'))
-	# else:
-	# 	return 'two password is different'
+			return redirect(url_for('login'))
+
 
 	return render_template('register.html', form=form)
 
 @app.route('/test') 
 def test():
-	flash('flash-1')
-	flash('flash-2')
-	flash('flash-3')
 	return render_template('index.html')  
   
   
@@ -111,7 +107,7 @@ def login():
 			if user.check_password(form.password.data):
 				login_user(user, form.remember_me.data)
 				flash('Success')
-				return render_template('login.html', form=form) 
+				return redirect(url_for('index')) 
 			else:
 				#  如果密碼驗證錯誤，就顯示錯誤訊息。
 				flash('Wrong Email or Password')
@@ -129,6 +125,13 @@ def logout():
     logout_user()
     flash('Log Out See You.')
     return redirect(url_for('login'))
+
+
+@app.route('/setting')
+@login_required
+def setting():
+	flash('This is setting.')
+	return render_template('setting.html')
   
   
 @app.route('/userinfo')  

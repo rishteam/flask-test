@@ -29,7 +29,17 @@ class Account(UserMixin, db.Model):
 		return check_password_hash(self.password, password)
 
 	def get_id(self):
-           return (self.uid)
+		return self.uid
+
+	def is_active(self):
+		return True
+
+	def is_authenticated(self):
+		return True
+
+	def is_anoymous(self):
+		return False
+
 
 class Account_valid(db.Model):
 	__tablename__ = 'account_valid'
