@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from form import FormRegister
 from models import Problem, Account, Submission
@@ -9,26 +11,27 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import config
 from flask_login import login_user, current_user, login_required, LoginManager, logout_user
 
+LISTEN_ALL = True
 
 app = Flask(__name__)
 app.config.from_object(config)
 db.init_app(app)
 bootstrap=Bootstrap(app)
-login = LoginManager(app)  
+login = LoginManager(app)
 login.login_view = 'login'
 
 
 
 @login.user_loader
 def load_user(user_id):
-    return Account.query.get(int(user_id))
+	return Account.query.get(int(user_id))
 
 @app.route('/question_list', methods=['GET', 'POST'])
 def question_list():
 	return render_template('question_list.html')
 
 @app.route('/question', methods=['GET', 'POST'])
-	
+
 def question():
 	return render_template('question.html')
 
@@ -56,7 +59,7 @@ def submit():
 			pass
 
 
-@app.route('/')    
+@app.route('/')
 def index():
 	return render_template('index.html')
 
@@ -76,20 +79,20 @@ def register():
 			return 'Username or Email collision'
 		elif form.password.data != form.confirm.data:
 			return 'two password is different'
-		else:	
+		else:
 			account = Account(uid=0, username=form.username.data, nickname=form.nickname.data, password=generate_password_hash(form.password.data), email=form.email.data, permLevel=False, signUpTime=date_time, lastLoginTime=date_time, icon=False)
-			db.session.add(account)  
+			db.session.add(account)
 			db.session.commit()
 			flash('Success Thank You')
 			return redirect(url_for('index'))
 
 	return render_template('register.html', form=form)
 
-@app.route('/test') 
+@app.route('/test')
 def test():
-	return render_template('index.html')  
-  
-  
+	return render_template('index.html')
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	form = FormLogin()
@@ -101,23 +104,23 @@ def login():
 			if user.check_password(form.password.data):
 				login_user(user, form.remember_me.data)
 				flash('Success')
-				return redirect(url_for('index')) 
+				return redirect(url_for('index'))
 			else:
 				#  如果密碼驗證錯誤，就顯示錯誤訊息。
 				flash('Wrong Email or Password')
 		else:
 			#  如果資料庫無此帳號，就顯示錯誤訊息。
 			flash('Wrong Email or Password')
-	return render_template('login.html', form=form) 
+	return render_template('login.html', form=form)
 
-  
-  
+
+
 @app.route('/logout')
 @login_required
 def logout():
-    logout_user()
-    flash('Log Out See You.')
-    return redirect(url_for('login'))
+	logout_user()
+	flash('Log Out See You.')
+	return redirect(url_for('login'))
 
 
 @app.route('/setting')
@@ -125,13 +128,15 @@ def logout():
 def setting():
 	flash('This is setting.')
 	return render_template('setting.html')
-  
-  
-@app.route('/userinfo')  
-def userinfo():  
-    return 'Here is UserINFO'
+
+
+@app.route('/userinfo')
+def userinfo():
+	return 'Here is UserINFO'
 
 
 if __name__ == '__main__':
-    app.debug = True
-    app.run()
+	if LISTEN_ALL:
+		app.run(host='0.0.0.0')
+	else:
+		app.run()
