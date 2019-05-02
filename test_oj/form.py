@@ -4,7 +4,7 @@ from wtforms.fields.html5 import EmailField
 
 class FormRegister(Form):
     """依照Model來建置相對應的Form
-    
+
     password2: 用來確認兩次的密碼輸入相同
     """
     username = StringField('UserName', validators=[

@@ -1,0 +1,123 @@
+=== Case 0 ===
+['time:0.502\n', 'time-wall:0.556\n', 'max-rss:52472\n', 'csw-voluntary:260\n', 'csw-forced:15\n', 'exitcode:0\n']
+=== compile_meta ===
+{   'csw-forced': 15,
+    'csw-voluntary': 260,
+    'exitcode': 0,
+    'max-rss': 52472,
+    'time': 0.502,
+    'time-wall': 0.556}
+['time:0.004\n', 'time-wall:0.186\n', 'max-rss:1316\n', 'csw-voluntary:8\n', 'csw-forced:0\n', 'exitsig:11\n', 'status:SG\n', 'message:Caught fatal signal 11\n']
+=== run_meta ===
+{   'csw-forced': 0,
+    'csw-voluntary': 8,
+    'exitsig': 11,
+    'max-rss': 1316,
+    'message': 'Caught fatal signal 11',
+    'status': 'SG',
+    'time': 0.004,
+    'time-wall': 0.186}
+['time:0.002\n', 'time-wall:0.036\n', 'max-rss:1644\n', 'csw-voluntary:6\n', 'csw-forced:1\n', 'exitcode:6\n', 'status:RE\n', 'message:Exited with error status 6\n']
+=== checkans_meta ===
+{   'csw-forced': 1,
+    'csw-voluntary': 6,
+    'exitcode': 6,
+    'max-rss': 1644,
+    'message': 'Exited with error status 6',
+    'status': 'RE',
+    'time': 0.002,
+    'time-wall': 0.036}
+==============
+
+=== Case 1 ===
+['time:0.502\n', 'time-wall:0.556\n', 'max-rss:52472\n', 'csw-voluntary:260\n', 'csw-forced:15\n', 'exitcode:0\n']
+=== compile_meta ===
+{   'csw-forced': 15,
+    'csw-voluntary': 260,
+    'exitcode': 0,
+    'max-rss': 52472,
+    'time': 0.502,
+    'time-wall': 0.556}
+['time:0.002\n', 'time-wall:0.198\n', 'max-rss:1316\n', 'csw-voluntary:8\n', 'csw-forced:2\n', 'exitsig:11\n', 'status:SG\n', 'message:Caught fatal signal 11\n']
+=== run_meta ===
+{   'csw-forced': 2,
+    'csw-voluntary': 8,
+    'exitsig': 11,
+    'max-rss': 1316,
+    'message': 'Caught fatal signal 11',
+    'status': 'SG',
+    'time': 0.002,
+    'time-wall': 0.198}
+['time:0.003\n', 'time-wall:0.036\n', 'max-rss:1648\n', 'csw-voluntary:6\n', 'csw-forced:0\n', 'exitcode:6\n', 'status:RE\n', 'message:Exited with error status 6\n']
+=== checkans_meta ===
+{   'csw-forced': 0,
+    'csw-voluntary': 6,
+    'exitcode': 6,
+    'max-rss': 1648,
+    'message': 'Exited with error status 6',
+    'status': 'RE',
+    'time': 0.003,
+    'time-wall': 0.036}
+==============
+
+=== Case 2 ===
+['time:0.502\n', 'time-wall:0.556\n', 'max-rss:52472\n', 'csw-voluntary:260\n', 'csw-forced:15\n', 'exitcode:0\n']
+=== compile_meta ===
+{   'csw-forced': 15,
+    'csw-voluntary': 260,
+    'exitcode': 0,
+    'max-rss': 52472,
+    'time': 0.502,
+    'time-wall': 0.556}
+['time:0.002\n', 'time-wall:0.177\n', 'max-rss:1316\n', 'csw-voluntary:8\n', 'csw-forced:0\n', 'exitsig:11\n', 'status:SG\n', 'message:Caught fatal signal 11\n']
+=== run_meta ===
+{   'csw-forced': 0,
+    'csw-voluntary': 8,
+    'exitsig': 11,
+    'max-rss': 1316,
+    'message': 'Caught fatal signal 11',
+    'status': 'SG',
+    'time': 0.002,
+    'time-wall': 0.177}
+['time:0.001\n', 'time-wall:0.034\n', 'max-rss:1652\n', 'csw-voluntary:6\n', 'csw-forced:1\n', 'exitcode:6\n', 'status:RE\n', 'message:Exited with error status 6\n']
+=== checkans_meta ===
+{   'csw-forced': 1,
+    'csw-voluntary': 6,
+    'exitcode': 6,
+    'max-rss': 1652,
+    'message': 'Exited with error status 6',
+    'status': 'RE',
+    'time': 0.001,
+    'time-wall': 0.034}
+==============
+
+=== Case 3 ===
+['time:0.502\n', 'time-wall:0.556\n', 'max-rss:52472\n', 'csw-voluntary:260\n', 'csw-forced:15\n', 'exitcode:0\n']
+=== compile_meta ===
+{   'csw-forced': 15,
+    'csw-voluntary': 260,
+    'exitcode': 0,
+    'max-rss': 52472,
+    'time': 0.502,
+    'time-wall': 0.556}
+['time:0.009\n', 'time-wall:0.192\n', 'max-rss:1316\n', 'csw-voluntary:7\n', 'csw-forced:3\n', 'exitsig:11\n', 'status:SG\n', 'message:Caught fatal signal 11\n']
+=== run_meta ===
+{   'csw-forced': 3,
+    'csw-voluntary': 7,
+    'exitsig': 11,
+    'max-rss': 1316,
+    'message': 'Caught fatal signal 11',
+    'status': 'SG',
+    'time': 0.009,
+    'time-wall': 0.192}
+['time:0.002\n', 'time-wall:0.038\n', 'max-rss:1648\n', 'csw-voluntary:6\n', 'csw-forced:2\n', 'exitcode:6\n', 'status:RE\n', 'message:Exited with error status 6\n']
+=== checkans_meta ===
+{   'csw-forced': 2,
+    'csw-voluntary': 6,
+    'exitcode': 6,
+    'max-rss': 1648,
+    'message': 'Exited with error status 6',
+    'status': 'RE',
+    'time': 0.002,
+    'time-wall': 0.038}
+==============
