@@ -28,14 +28,15 @@ def load_user(user_id):
 
 @app.route('/question_list', methods=['GET', 'POST'])
 def question_list():
-	return render_template('question_list.html')
+	questions = Problem.query.order_by(Problem.problemId.desc()).all()
+	return render_template('question_list.html',questions=questions)
 
 @app.route('/question', methods=['GET', 'POST'])
-
+@login_required
 def question():
 	return render_template('question.html')
 
-@app.route('/submit/', methods=['GET','POST'])
+@app.route('/submit', methods=['GET','POST'])
 @login_required
 def submit():
 	global submit_id
@@ -59,7 +60,7 @@ def submit():
 			pass
 
 
-@app.route('/')
+@app.route('/index')
 def index():
 	return render_template('index.html')
 
@@ -76,8 +77,6 @@ def register():
 		username = Account.query.filter(Account.username == form.username.data).first()
 		email = Account.query.filter(Account.email == form.email.data).first()
 
-		print("{} | {}".format(form.password.data, form.confirm.data))
-
 		if username or email:
 			return 'Username or Email collision'
 		elif form.password.data != form.confirm.data:
@@ -92,9 +91,6 @@ def register():
 
 	return render_template('register.html', form=form)
 
-@app.route('/test')
-def test():
-	return render_template('index.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -102,9 +98,8 @@ def login():
 	form = FormLogin()
 	if form.validate_on_submit():
 		#  當使用者按下login之後，先檢核帳號是否存在系統內。
-		print("validate")
 		user = Account.query.filter_by(username=form.username.data).first()
-		print("{}: {}".format(login, user))
+
 		if user:
 			#  當使用者存在資料庫內再核對密碼是否正確。
 			if user.check_password(form.password.data):
@@ -138,9 +133,9 @@ def setting():
 
 
 @app.route('/userinfo')
+@login_required
 def userinfo():
-	return 'Here is UserINFO'
-
+	return render_template('userinfo.html')
 
 if __name__ == '__main__':
 	if LISTEN_ALL:

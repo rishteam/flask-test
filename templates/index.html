@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
 
 {% block title %}
 Home Page
@@ -10,11 +11,11 @@ Home Page
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Playball">
 {% endblock %}
 
-{% block main %}
+{% block page_content %}
 <!-- <h1>HOME PAGE</h1> -->
 <div class="container-fluid">
 	<div class="Rish_main">
-		<div class="Rish_block_main">		
+		<div class="Rish_block_main">
 			<div class="block great h1 cyanblue">
 				<div class="sub">
 					<div class="block_vertical_main">
@@ -48,7 +49,7 @@ Home Page
 						</thead>
 						<tbody>
 							<tr>
-								<td>								
+								<td>
 									<a href="./ICEJJ.html">ICEJJ</a>
 								</td>
 								<td>999999999999</td>

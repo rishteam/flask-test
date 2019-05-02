@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Login Page{% endblock %}
+
+{% block page_content %}
+
+<h1>Your Email:</h1>
+<br>
+<p>{{ current_user.email }}</p>
+<h1>Your Nickname:</h1>
+<br>
+<p>{{ current_user.nickname }}</p>
+<h1>Your signUpTime:</h1>
+<br>
+<p>{{ current_user.signUpTime }}</p>
+
+{% endblock %}

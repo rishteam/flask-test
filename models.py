@@ -7,9 +7,9 @@ from flask_login import LoginManager, UserMixin
 class Problem(db.Model):
 	__tablename__  = 'problem'
 	__table_args__ = {'mysql_collate': 'utf8_general_ci'}
-	problemName = db.Column(db.String(100), primary_key=True)
+	uid = db.Column(db.Integer, primary_key=True , nullable=False, unique=True)
+	problemName = db.Column(db.String(100), nullable=False, unique=True)
 	problemId = db.Column(db.Integer, nullable=False, unique=True)
-	uid = db.Column(db.Integer, nullable=False, unique=True)
 
 class Account(UserMixin, db.Model):
 	__tablename__  = 'account'
