@@ -15,6 +15,12 @@ LISTEN_ALL = True
 def index():
 	return render_template('test.html')
 
+@app.route('/passarg')
+@app.route('/passarg/<arg>')
+def handle_pass(arg='empty'):
+	return render_template('pass_arg.html', arg=arg)
+
+
 @app.route('/submit', methods=['POST'])
 def submit_code():
 	s = ''
