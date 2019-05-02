@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from form import FormRegister
 from models import Problem, Account, Submission

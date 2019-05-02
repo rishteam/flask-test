@@ -1,0 +1,23 @@
+=== compile_meta ===
+{   'csw-forced': 17,
+    'csw-voluntary': 79,
+    'exitcode': 0,
+    'max-rss': 52644,
+    'time': 0.543,
+    'time-wall': 0.589}
+=== run_meta ===
+{   'csw-forced': 0,
+    'csw-voluntary': 6,
+    'exitcode': 0,
+    'max-rss': 1452,
+    'time': 0.002,
+    'time-wall': 0.038}
+=== checkans_meta ===
+{   'csw-forced': 1,
+    'csw-voluntary': 5,
+    'exitcode': 1,
+    'max-rss': 1584,
+    'message': 'Exited with error status 1',
+    'status': 'RE',
+    'time': 0.002,
+    'time-wall': 0.033}

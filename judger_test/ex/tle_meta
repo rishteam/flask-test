@@ -1,0 +1,25 @@
+=== compile_meta ===
+{   'csw-forced': 31,
+    'csw-voluntary': 154,
+    'exitcode': 0,
+    'max-rss': 52516,
+    'time': 0.541,
+    'time-wall': 0.603}
+=== run_meta ===
+{   'csw-forced': 0,
+    'csw-voluntary': 4,
+    'killed': 1,
+    'max-rss': 920,
+    'message': 'Time limit exceeded',
+    'status': 'TO',
+    'time': 0.0,
+    'time-wall': 3.14}
+=== checkans_meta ===
+{   'csw-forced': 1,
+    'csw-voluntary': 6,
+    'exitcode': 6,
+    'max-rss': 1648,
+    'message': 'Exited with error status 6',
+    'status': 'RE',
+    'time': 0.001,
+    'time-wall': 0.032}
