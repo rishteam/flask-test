@@ -1,0 +1,13 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>flash test</title>
+</head>
+<body>
+    <ul>
+    {% for msg in get_flashed_messages() %}
+        <li>{{ msg }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html
