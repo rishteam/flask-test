@@ -4,10 +4,12 @@
     <title>flash test</title>
 </head>
 <body>
+    {% with msg_list = get_flashed_messages() %}
     <ul>
-    {% for msg in get_flashed_messages() %}
+    {% for msg in msg_list %}
         <li>{{ msg }}</li>
     {% endfor %}
     </ul>
+    {% endwith %}
 </body>
 </html

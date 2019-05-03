@@ -12,8 +12,11 @@ app.config.from_object(config)
 # from lab_9 import lab_9
 # app.register_blueprint(lab_9)
 
-from lab_10 import lab_10
-app.register_blueprint(lab_10)
+# from lab_10 import lab_10
+# app.register_blueprint(lab_10)
+
+from lab_11 import lab_11
+app.register_blueprint(lab_11)
 
 from flash_test import flash_test
 app.register_blueprint(flash_test)
