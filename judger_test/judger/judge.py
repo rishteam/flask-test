@@ -22,7 +22,7 @@ JUDGE_CPP = 1
 11 Restricted Function
 '''
 
-cur_path = os.path.join(os.getcwd(), 'judger')
+cur_path = os.path.abspath(os.path.dirname(__file__))
 
 compile_inc_path = os.path.join(cur_path, 'compile')
 box_path = lambda box_id, *p: os.path.join('/var/local/lib/isolate/', str(box_id), 'box', *p)

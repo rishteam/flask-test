@@ -6,8 +6,9 @@ from utils import dump
 import json
 
 code = ''
-with open('../../test/test.cpp', 'r') as f:
+with open('../testProb/1.cpp', 'r') as f:
 	code = ''.join(f.readlines())
+
 
 # tmp = []
 # for _ in range(10):
