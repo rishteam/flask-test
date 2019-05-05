@@ -10,7 +10,7 @@ USERNAME = 'root'
 PASSWORD = 'root'
 HOST = '127.0.0.1'
 PORT = '3306'
-DATABASE = 'oj_0'
+DATABASE = 'test_1'
 
 DB_URI = "{}+{}://{}:{}@{}:{}/{}?charset=utf8mb4".format(DIALECT, DRIVER, USERNAME, PASSWORD, HOST, PORT, DATABASE)
 SQLALCHEMY_DATABASE_URI = "{}+{}://{}:{}@{}:{}/{}?charset=utf8mb4".format(DIALECT, DRIVER, USERNAME, PASSWORD, HOST, PORT, DATABASE)
