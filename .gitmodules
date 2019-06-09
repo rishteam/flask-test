@@ -1,0 +1,3 @@
+[submodule "FlaskConnectAjax"]
+	path = FlaskConnectAjax
+	url = https://github.com/xmanrui/FlaskConnectAjax.git
